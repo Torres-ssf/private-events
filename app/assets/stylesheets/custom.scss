@@ -1,2 +1,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.page-heading {
+  text-align: center;
+}
+
+//signup form
+
+.form-container {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.signup-form {
+  display: flex;
+  flex-flow: column;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.signup-form label {
+  margin-bottom: 10px;
+}
+
+.signup-form input {
+  margin-bottom: 10px;
+}
