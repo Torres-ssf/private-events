@@ -24,6 +24,8 @@ default: &default
 development:
   <<: *default
   database: private-events_development
+  username: postgres
+  password: qwer1234
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -41,7 +43,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
+  port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -58,6 +60,8 @@ development:
 test:
   <<: *default
   database: private-events_test
+  username: postgres
+  password: qwer1234
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,5 +85,5 @@ test:
 production:
   <<: *default
   database: private-events_production
-  username: private-events
-  password: <%= ENV['PRIVATE-EVENTS_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: qwer1234
