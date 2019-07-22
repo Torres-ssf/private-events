@@ -13,7 +13,7 @@
          <p> <%= event.location %></p>
         </div>
         <div class="time">
-          Time: <%= event.time %>
+          Time: <%= event.time.strftime("%H:%M - %d/%m/%Y") %>
         </div>
         <%= link_to "Details", event_path(id: event.id) %>
         </section>
