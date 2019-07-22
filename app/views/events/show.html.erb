@@ -1,0 +1,14 @@
+<h1>Events#show</h1>
+
+<section>
+        <div class="content">
+         <h3> <%= @event.name %></h3>
+        <p>  <%= @event.description %></p>
+         <p> <%= @event.location %></p>
+        </div>
+        <div class="time">
+          Time: <%= @event.time %>
+        </div>
+</section>
+<%= link_to "Show all events", events_path%>
+

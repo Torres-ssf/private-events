@@ -1,3 +1,23 @@
 <%= @user.name %>
 <br>
 <%= @user.email %>
+
+  <% if @user.events.any? %>
+    <ol class="events">
+    <% @user.events.each do |event| %>
+      <li id="events-<%= event.id %>">
+      <section>
+        <div class="content">
+         <h3> <%= event.name %></h3>
+        <p>  <%= event.description %></p>
+         <p> <%= event.location %></p>
+        </div>
+        <div class="time">
+          Time: <%= event.time %>
+        </div>
+        <%= link_to "Details", event_path(id: event.id) %>
+        </section>
+      </li>
+    <% end %>
+    </ol>
+  <% end %>

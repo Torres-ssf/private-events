@@ -12,17 +12,17 @@
   margin: 0 auto;
 }
 
-.signup-form {
+.signup-form, .form {
   display: flex;
   flex-flow: column;
   margin-top: 30px;
   padding: 0 20px;
 }
 
-.signup-form label {
+.signup-form label, .form label {
   margin-bottom: 10px;
 }
 
-.signup-form input {
+.signup-form input, .form input {
   margin-bottom: 10px;
 }

@@ -1,0 +1,21 @@
+<% provide(:title, 'Event List') %>
+<main class="col-md-8">
+  <h3>Event List</h3>
+  <% if @events.any? %>
+    <ol class="events">
+    <% @events.each do |event| %>
+      <li id="events-<%= event.id %>">
+        <span class="content">
+          <%= event.name %>
+          <%= event.description %>
+          <%= event.location %>
+        </span>
+        <span class="time">
+          Time: <%= event.time %> 
+        </span>
+        <%= link_to "Details", event_path(id: event.id) %>
+      </li>
+    <% end %>
+    </ol>
+  <% end %>
+</main>
