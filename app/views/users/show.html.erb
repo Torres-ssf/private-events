@@ -27,9 +27,13 @@
   <% end %>
 
   <% if @user.attended_events.any? %>
+
     <h3>Attending events:</h3>
+
+    <% if @upcoming_events.any? %>
+    <h4> Upcoming Events (<%= @upcoming_events.count %>) </h4>
     <ol class="events">
-    <% @user.attended_events.each do |event| %>
+    <% @upcoming_events.each do |event| %>
     <li id="events-<%= event.id %>">
     <section>
       <div class="content">
@@ -43,7 +47,31 @@
       <%= link_to "Details", event_path(id: event.id) %>
       </section>
     </li>
-    <% end %>
+  <% end %>
+    </ol>
+  <% end %>
+
+ <% if @prev_events.any? %>
+    <h4> Past Events (<%= @prev_events.count %>) </h4>
+    <ol class="events">
+    <% @prev_events.each do |event| %>
+    <li id="events-<%= event.id %>">
+    <section>
+      <div class="content">
+       <h4> <%= event.name %></h4>
+      <p>  <%= event.description %></p>
+       <p> <%= event.location %></p>
+      </div>
+      <div class="time">
+        Time: <%= event.time.strftime("%H:%M - %d/%m/%Y") %>
+      </div>
+      <%= link_to "Details", event_path(id: event.id) %>
+      </section>
+    </li>
+  <% end %>
+    </ol>
+  <% end %>
+
   <% else %>
     <h3>Attending to no events yet</h3>
   <% end %>
