@@ -1,14 +1,16 @@
-<%= @user.name %>
-<br>
-<%= @user.email %>
+
+<h2>Welcome <%= @user.name %></h2>
+
+<p>Create a new <%= link_to "event", "events/new" %></p>
 
   <% if @user.events.any? %>
+    <h3>Events created by you:</h3>
     <ol class="events">
     <% @user.events.each do |event| %>
       <li id="events-<%= event.id %>">
       <section>
         <div class="content">
-         <h3> <%= event.name %></h3>
+         <h4> <%= event.name %></h4>
         <p>  <%= event.description %></p>
          <p> <%= event.location %></p>
         </div>
@@ -20,4 +22,28 @@
       </li>
     <% end %>
     </ol>
+  <% else %>
+    <h3>You didn't create any events yet.</h3>
+  <% end %>
+
+  <% if @user.attended_events.any? %>
+    <h3>Attending events:</h3>
+    <ol class="events">
+    <% @user.attended_events.each do |event| %>
+    <li id="events-<%= event.id %>">
+    <section>
+      <div class="content">
+       <h4> <%= event.name %></h4>
+      <p>  <%= event.description %></p>
+       <p> <%= event.location %></p>
+      </div>
+      <div class="time">
+        Time: <%= event.time.strftime("%H:%M - %d/%m/%Y") %>
+      </div>
+      <%= link_to "Details", event_path(id: event.id) %>
+      </section>
+    </li>
+    <% end %>
+  <% else %>
+    <h3>Attending to no events yet</h3>
   <% end %>

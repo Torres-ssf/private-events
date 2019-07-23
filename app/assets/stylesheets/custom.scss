@@ -8,8 +8,29 @@
 //signup form
 
 .form-container {
-  width: 40%;
-  margin: 0 auto;
+    background-color: #FF8F5E;
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    color: #fff;
+    max-width: 350px;
+    margin: 20px auto 70px;
+    min-height: 400px;
+    padding: 30px;
+    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    z-index: 1;
+}
+
+.form-container input {
+    color: #66615b;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    padding: 7px 12px;
+    height: 40px;
+}
+
+.signup-btn {
+  margin-top: 20px;
 }
 
 .signup-form, .form {

@@ -1,4 +1,4 @@
-<h1>Events#show</h1>
+<h1>Event details</h1>
 
 <section>
   <div class="content">
@@ -10,15 +10,20 @@
     Time: <%= @event.time %>
   </div>
 
-  <h2>Attendees List</h2>
+  <p>Created by: <%= current_user.name %></p>
+
+  <br>
+  <h3>Attendees List</h2>
   <% if @event.attendees.any? %>
         <ol>
         <% @event.attendees.each do |attendee| %>
-          <li><%= attendee %></li>
+          <li><%= attendee.name %></li>
         <% end %>
         </ol>
   <% else %>
         <p>No attendees for this event yet</p>
   <% end %>
+  <br>
 </section>
+  <br>
 <%= link_to "Show all events", events_path%>
