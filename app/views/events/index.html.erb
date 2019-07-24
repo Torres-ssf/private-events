@@ -3,10 +3,10 @@
   <h3>Event List</h3>
   <% if @events.any? %>
 
- <% if @events.past.any? %>
+ <% if @past_events.any? %>
     <h4>Past Event List</h4>
     <ol class="events">
-    <% @events.past.each do |event| %>
+    <% @past_events.each do |event| %>
       <li id="events-<%= event.id %>">
         <span class="content">
           <%= event.name %>
@@ -14,7 +14,7 @@
           <%= event.location %>
         </span>
         <span class="time">
-          Time: <%= event.time %> 
+          Time: <%= event.time %>
         </span>
         <%= link_to "Details", event_path(id: event.id) %>
       </li>
@@ -23,10 +23,10 @@
     <% end %>
 
 
- <% if @events.upcoming.any? %>
+ <% if @upcoming_events.any? %>
     <h4>Upcoming Event List</h4>
     <ol class="events">
-    <% @events.upcoming.each do |event| %>
+    <% @upcoming_events.each do |event| %>
       <li id="events-<%= event.id %>">
         <span class="content">
           <%= event.name %>
@@ -34,7 +34,7 @@
           <%= event.location %>
         </span>
         <span class="time">
-          Time: <%= event.time %> 
+          Time: <%= event.time %>
         </span>
         <%= link_to "Details", event_path(id: event.id) %>
       </li>

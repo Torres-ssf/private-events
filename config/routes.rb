@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
+  root    'static_pages#home'
+
+  get     '/home',        to: 'static_pages#home'
+
   get     'events/new',   to: 'events#new'
   post    'events/new',   to: 'events#create'
   get     'event',        to: 'events#show'

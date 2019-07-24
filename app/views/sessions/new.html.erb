@@ -1,14 +1,17 @@
 <% provide(:title, 'Log in') %>
-<h1 class="page-heading" >Log in</h1>
 
-<div class="row">
-  <div class="form-container">
+<section class="first-section">
+
+  <h1 class="centered-text" >Log in</h1>
+
+  <div class="form">
     <%= form_for(:session, html: {class: "signup-form"}) do |f| %>
 
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, class: "form-control" %>
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
   </div>
-</div>
+
+</section>

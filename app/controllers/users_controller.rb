@@ -17,8 +17,9 @@ class UsersController < ApplicationController
   def show
     if logged_in?
       @user = User.find_by(id: session[:user_id])
-      @upcoming_events = current_user.upcoming_events
-      @prev_events = current_user.previous_events
+      @user_events = @user.events
+      @upcoming_events = @user.attended_events.upcoming
+      @past_events = @user.attended_events.past
     else
       redirect_to login_path
     end

@@ -2,20 +2,19 @@
 <html>
   <head>
     <title>PrivateEvents</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/rails_default' %>
   </head>
 
   <body>
 
-    <div class="container">
+    <%=  render 'layouts/header' %>
+
+    <main>
 
       <%= yield %>
-
-    </div>
+    </main>
+    
 
   </body>
 </html>

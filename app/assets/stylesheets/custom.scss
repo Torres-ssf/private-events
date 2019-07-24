@@ -1,23 +1,77 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.page-navbar {
+  background-color: #343F3E;
+  display: flex;
+  font-family: 'Roboto Condensed', sans-serif;
+  height: 48px;
+  width: 100%;
+}
+
+.page-logo {
+  color: #84DCCF;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: auto auto auto 20px;
+}
+
+.page-logo:hover {
+  color: #84DCCF;
+  text-decoration: none;
+}
+
+.navbar-list {
+  margin: auto 20px auto 0;
+}
+
+.navbar-links {
+  color: #84DCCF;
+  font-size: 1.7rem;
+  margin: auto 0 auto 20px;
+}
+
+.first-section {
+  margin-top: 60px;
+}
+
+.welcome-container {
+  margin: 70px auto 0;
+  text-align: center;
+  width: 100%;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+
+.signup-form {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 
 .page-heading {
-  text-align: center;
+
 }
 
 //signup form
 
 .form-container {
-    background-color: #FF8F5E;
-    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    color: #fff;
-    max-width: 350px;
-    margin: 20px auto 70px;
-    min-height: 400px;
-    padding: 30px;
-    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
-    z-index: 1;
+  width: 750px;
+  margin: 0 auto;
 }
 
 .form-container input {
