@@ -1,47 +1,13 @@
 <% provide(:title, 'Event List') %>
-<main class="col-md-8">
-  <h3>Event List</h3>
+
+  <h2 class="centered-text">Event List</h2>
+
   <% if @events.any? %>
 
- <% if @past_events.any? %>
-    <h4>Past Event List</h4>
-    <ol class="events">
-    <% @past_events.each do |event| %>
-      <li id="events-<%= event.id %>">
-        <span class="content">
-          <%= event.name %>
-          <%= event.description %>
-          <%= event.location %>
-        </span>
-        <span class="time">
-          Time: <%= event.time %>
-        </span>
-        <%= link_to "Details", event_path(id: event.id) %>
-      </li>
-    <% end %>
-    </ol>
-    <% end %>
+    <%= render partial: 'upcoming_past',
+             locals: { upcoming: @upcoming_events, past: @past_events } %>
 
+  <% else %>
 
- <% if @upcoming_events.any? %>
-    <h4>Upcoming Event List</h4>
-    <ol class="events">
-    <% @upcoming_events.each do |event| %>
-      <li id="events-<%= event.id %>">
-        <span class="content">
-          <%= event.name %>
-          <%= event.description %>
-          <%= event.location %>
-        </span>
-        <span class="time">
-          Time: <%= event.time %>
-        </span>
-        <%= link_to "Details", event_path(id: event.id) %>
-      </li>
-    <% end %>
-    </ol>
-    <% end %>
-
-
+    <h3 class="centered-text">No events created yet.</h3>
   <% end %>
-</main>

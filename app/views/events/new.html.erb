@@ -1,22 +1,25 @@
 <% provide(:title, 'Create Event') %>
-<h1 class="page-heading" >Create Event</h1>
 
-<div class="row">
-  <div class="form-container">
-    <%= form_for(:event, html: {class: "form"}) do |f| %>
+  <section class="first-section">
+
+    <h1 class="centered-text">Create Event</h1>
+
+    <div class="form">
+      <%= form_for(:event, html: {class: "signup-form"}) do |f| %>
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: "form-control" %>
 
       <%= f.label :description %>
-      <%= f.text_area :description %>
+      <%= f.text_area :description, class: "form-control" %>
 
       <%= f.label :location %>
-      <%= f.text_field :location %>
+      <%= f.text_field :location, class: "form-control" %>
 
       <%= f.label :time %>
-      <%= f.date_field :time %>
+      <%= f.date_field :time, class: "form-control" %>
 
       <%= f.submit "Create an event", class: "btn btn-primary" %>
     <% end %>
   </div>
-</div>
+
+</section>

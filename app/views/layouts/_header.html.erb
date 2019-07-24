@@ -8,6 +8,7 @@
       <%= link_to "All Events", events_path, class: "navbar-links" %>
 
       <% if logged_in? %>
+        <%= link_to "New Event", events_new_path, class: "navbar-links" %>
         <%= link_to "Profile", profile_path, class: "navbar-links" %>
         <%= link_to "Log out", logout_path, class: "navbar-links", method: :delete %>
       <% else %>

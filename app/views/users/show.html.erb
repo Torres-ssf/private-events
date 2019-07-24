@@ -1,75 +1,18 @@
+<h2 class="centered-text">Welcome
+  <%= @user.name %></h2>
 
-<h2>Welcome <%= @user.name %></h2>
+<% if @user_events.any? %>
+  <h3 class="centered-text" >Events created by you:</h3>
 
-<p>Create a new <%= link_to "event", "events/new" %></p>
+  <div class="attending-events-container">
 
-  <% if @user_events.any? %>
-    <h3>Events created by you:</h3>
-    <ol class="events">
-    <% @user_events.each do |event| %>
-      <li id="events-<%= event.id %>">
-      <section>
-        <div class="content">
-         <h4> <%= event.name %></h4>
-        <p>  <%= event.description %></p>
-         <p> <%= event.location %></p>
-        </div>
-        <div class="time">
-          Time: <%= event.time.strftime("%H:%M - %d/%m/%Y") %>
-        </div>
-        <%= link_to "Details", event_path(id: event.id) %>
-        </section>
-      </li>
-    <% end %>
-    </ol>
-  <% else %>
-    <h3>You didn't create any events yet.</h3>
-  <% end %>
+    <%= render partial: "events/event", object: @user.events, as: 'events' %>
 
-    <h3>Attending events:</h3>
+  </div>
 
-    <% if @upcoming_events.any? %>
-    <h4> Upcoming Events (<%= @upcoming_events.count %>) </h4>
-    <ol class="events">
-    <% @upcoming_events.each do |event| %>
-    <li id="events-<%= event.id %>">
-    <section>
-      <div class="content">
-       <h4> <%= event.name %></h4>
-      <p>  <%= event.description %></p>
-       <p> <%= event.location %></p>
-      </div>
-      <div class="time">
-        Time: <%= event.time.strftime("%H:%M - %d/%m/%Y") %>
-      </div>
-      <%= link_to "Details", event_path(id: event.id) %>
-      </section>
-    </li>
-  <% end %>
-    </ol>
-  <% else %>
-    <h4>No upcoming events</h4>
-  <% end %>
+<% else %>
+  <h3 class="centered-text">You didn't create any events yet.</h3>
+<% end %>
 
- <% if @past_events.any? %>
-    <h4> Past Events (<%= @past_events.count %>) </h4>
-    <ol class="events">
-    <% @past_events.each do |event| %>
-    <li id="events-<%= event.id %>">
-    <section>
-      <div class="content">
-       <h4> <%= event.name %></h4>
-      <p>  <%= event.description %></p>
-       <p> <%= event.location %></p>
-      </div>
-      <div class="time">
-        Time: <%= event.time.strftime("%H:%M - %d/%m/%Y") %>
-      </div>
-      <%= link_to "Details", event_path(id: event.id) %>
-      </section>
-    </li>
-  <% end %>
-    </ol>
-  <% else %>
-    <h4>No past events</h4>
-  <% end %>
+<%= render partial: 'events/upcoming_past',
+           locals: { upcoming: @upcoming_events, past: @past_events } %>

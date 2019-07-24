@@ -8,11 +8,17 @@
       <h3>
         Hi there <%= @user.name %>,
         <% if @upcoming_events.count > 0 %>
-          you have <%= @upcoming_events.count %> to attend.
+          you have <%= @upcoming_events.count %> to attend.</h3>
+
+          <div class="attending-events-container">
+
+            <%= render partial: "events/event", object: @upcoming_events, as: 'events' %>
+
+          </div>
+
         <% else %>
-          you don't have any future events to attend to.
+        <h3>you don't have any future events to attend to.</h3>
         <% end %>
-      </h3>
     <% else %>
       <h3>Not a member yet? <%= link_to "Join us", signup_path %> now!</h3>
     <% end %>

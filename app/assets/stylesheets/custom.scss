@@ -7,6 +7,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+main {
+  margin: 0 30px;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -62,10 +66,40 @@ a:hover {
   margin: 0 auto;
 }
 
-
-.page-heading {
-
+.event-row {
+  display: flex;
 }
+
+.event-wrapper {
+  width: 50%;
+}
+
+.attending-events-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.event-container {
+  background-color: #355691;
+  border: 1px solid white;
+  border-radius: .9rem;
+  color: white;
+  padding: 20px;
+  min-width: 160px;
+  max-width: 280px;
+}
+
+.event-link {
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.event-link:hover {
+  color: #BFB7B6
+}
+
+
 
 //signup form
 
