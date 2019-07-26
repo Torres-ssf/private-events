@@ -1,0 +1,20 @@
+<% provide(:title, 'Sign up') %>
+
+<section class="first-section">
+
+  <h2 class="centered-text" >Sign up</h2>
+
+  <div class="form">
+    <%= form_for(:user, html: {class: "signup-form"}) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.submit "Create new account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+</section>

@@ -1,0 +1,21 @@
+<header>
+  <nav class="page-navbar">
+    <%= link_to "Private Events", home_path, class: "page-logo" %>
+    <ul class="navbar-list">
+
+      <%= link_to "Home", home_path, class: "navbar-links" %>
+
+      <%= link_to "All Events", events_path, class: "navbar-links" %>
+
+      <% if logged_in? %>
+        <%= link_to "New Event", events_new_path, class: "navbar-links" %>
+        <%= link_to "Profile", profile_path, class: "navbar-links" %>
+        <%= link_to "Log out", logout_path, class: "navbar-links", method: :delete %>
+      <% else %>
+        <%= link_to "Log in", login_path, class: "navbar-links" %>
+      <% end %>
+
+    </ul>
+
+  </nav>
+</header>

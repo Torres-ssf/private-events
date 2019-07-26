@@ -1,0 +1,137 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  margin: 0 30px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.page-navbar {
+  background-color: #343F3E;
+  display: flex;
+  font-family: 'Roboto Condensed', sans-serif;
+  height: 48px;
+  width: 100%;
+}
+
+.page-logo {
+  color: #84DCCF;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: auto auto auto 20px;
+}
+
+.page-logo:hover {
+  color: #84DCCF;
+  text-decoration: none;
+}
+
+.navbar-list {
+  margin: auto 20px auto 0;
+}
+
+.navbar-links {
+  color: #84DCCF;
+  font-size: 1.7rem;
+  margin: auto 0 auto 20px;
+}
+
+.first-section {
+  margin-top: 60px;
+}
+
+.welcome-container {
+  margin: 70px auto 0;
+  text-align: center;
+  width: 100%;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+
+.signup-form {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.event-row {
+  display: flex;
+}
+
+.event-wrapper {
+  width: 50%;
+}
+
+.attending-events-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.event-container {
+  background-color: #355691;
+  border: 1px solid white;
+  border-radius: .9rem;
+  color: white;
+  padding: 20px;
+  min-width: 160px;
+  max-width: 280px;
+}
+
+.event-link {
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.event-link:hover {
+  color: #BFB7B6
+}
+
+
+
+//signup form
+
+.form-container {
+  width: 750px;
+  margin: 0 auto;
+}
+
+.form-container input {
+    color: #66615b;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    padding: 7px 12px;
+    height: 40px;
+}
+
+.signup-btn {
+  margin-top: 20px;
+}
+
+.signup-form, .form {
+  display: flex;
+  flex-flow: column;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.signup-form label, .form label {
+  margin-bottom: 10px;
+}
+
+.signup-form input, .form input {
+  margin-bottom: 10px;
+}
